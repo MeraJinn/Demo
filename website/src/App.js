@@ -1,9 +1,11 @@
 import React from "react";
 import "./styles/main.css";
+import Home from "./components/HomePage";
+
 const App = () => {
   return (
     <div>
-      <h1>Hello! World From MeraJinn</h1>
+      <Home />
     </div>
   );
 };
