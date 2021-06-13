@@ -1,8 +1,24 @@
-import React from "react";
-import { HeroContainer, HeroBg, VideoBg } from "./HeroElements";
+import React, { useState } from "react";
+import {
+  HeroContainer,
+  HeroBg,
+  VideoBg,
+  HeroH1,
+  HeroP,
+  HeroBtnWrapper,
+  HeroContent,
+} from "./HeroElements";
 import video from "../../video/video.mp4";
+import { Button } from "@material-ui/core";
+import { ArrowBack, ArrowForward } from "@material-ui/icons";
 
 const HeroElements = () => {
+  const [hover, setHover] = useState(false);
+
+  const onHover = () => {
+    setHover(!hover);
+  };
+
   return (
     <HeroContainer id="Home">
       <HeroBg>
@@ -15,6 +31,17 @@ const HeroElements = () => {
           impedit maiores neque veritatis. Accusantium, asperiores labore. Esse
           iste facere saepe.
         </HeroP>
+        <HeroBtnWrapper>
+          <Button
+            to="signup"
+            variant="contained"
+            onClick={onHover}
+            endIcon={hover ? <ArrowBack /> : <ArrowForward />}
+            color="primary"
+          >
+            Get Started
+          </Button>
+        </HeroBtnWrapper>
       </HeroContent>
     </HeroContainer>
   );
