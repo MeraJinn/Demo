@@ -1,4 +1,13 @@
 import React from "react";
+import {
+  ServicesH2,
+  ServicesCard,
+  ServicesContainer,
+  ServicesIcon,
+  ServicesH1,
+  ServicesWrapper,
+  ServicesP,
+} from "./servicesElements";
 
 const Services = () => {
   return (
@@ -6,19 +15,19 @@ const Services = () => {
       <ServicesH1>Our Services</ServicesH1>
       <ServicesWrapper>
         <ServicesCard>
-          <ServicesIcon src={icon} />
+          <ServicesIcon />
           <ServicesH2>Service 1</ServicesH2>
-          <SerivicesP>A desscription for above service</SerivicesP>
+          <ServicesP>A desscription for above service</ServicesP>
         </ServicesCard>
         <ServicesCard>
-          <ServicesIcon src={icon1} />
+          <ServicesIcon />
           <ServicesH2>Service 2</ServicesH2>
-          <SerivicesP>A desscription for above service</SerivicesP>
+          <ServicesP>A desscription for above service</ServicesP>
         </ServicesCard>
         <ServicesCard>
-          <ServicesIcon src={icon2} />
+          <ServicesIcon />
           <ServicesH2>Service 3</ServicesH2>
-          <SerivicesP>A desscription for above service</SerivicesP>
+          <ServicesP>A desscription for above service</ServicesP>
         </ServicesCard>
       </ServicesWrapper>
     </ServicesContainer>
