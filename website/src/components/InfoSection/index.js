@@ -13,27 +13,48 @@ import {
   Subtitle,
   BtnWrap,
 } from "./InfoElements";
-import { Button } from "react-scroll";
-
-const InfoSection = () => {
+import { AboutSvg } from "../../images/svg-1.js";
+import { Button } from "@material-ui/core";
+import { Link as LinkS } from "react-scroll";
+const InfoSection = ({
+  lightBg,
+  id,
+  imgStart,
+  topLine,
+  lightText,
+  headline,
+  darkTest,
+  description,
+  buttonLabel,
+}) => {
   return (
     <>
-      <InfoContainer>
+      <InfoContainer lightBg={lightBg} id={id}>
         <InfoWrapper>
-          <InfoRow>
+          <InfoRow imgStart={imgStart}>
             <Column1>
               <TextWrapper>
-                <TopLine>topline</TopLine>
-                <Heading>Heading</Heading>
-                <Subtitle>subtitle</Subtitle>
+                <TopLine>{topLine}</TopLine>
+                <Heading lightText={lightText}>{headline}</Heading>
+                <Subtitle darkTest={darkTest}>{description}</Subtitle>
                 <BtnWrap>
-                  <Button to="home" />
+                  <Button
+                    component={LinkS}
+                    to="home"
+                    variant="contained"
+                    color="primary"
+                    smooth={true}
+                    duration={1000}
+                    exact="true"
+                  >
+                    {buttonLabel}
+                  </Button>
                 </BtnWrap>
               </TextWrapper>
             </Column1>
             <Column2>
               <ImgWrap>
-                <Img />
+                <Img src={<AboutSvg />} alt="svg" />
               </ImgWrap>
             </Column2>
           </InfoRow>

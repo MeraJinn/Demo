@@ -20,9 +20,9 @@ const HeroElements = () => {
   };
 
   return (
-    <HeroContainer id="Home">
+    <HeroContainer id="home">
       <HeroBg>
-        <VideoBg autoPlay loop muted src={video} type="video/mp4" />
+        {/* <VideoBg autoPlay loop muted src={video} type="video/mp4" /> */}
       </HeroBg>
       <HeroContent>
         <HeroH1>MeraJinn.</HeroH1>
