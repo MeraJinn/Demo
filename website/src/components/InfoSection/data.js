@@ -9,6 +9,7 @@ export const homeObjOne = {
     "Ride The world, by making it more green, just make it your ride!!!",
   buttonLabel: "Get Started",
   imgStart: false,
+  img: require("../../images/svg-2.svg"),
   alt: "Car",
   dark: true,
   primary: true,
@@ -25,6 +26,8 @@ export const homeObjTwo = {
   description: "Lorem ipsum dolor sit amet.",
   buttonLabel: "Get Started",
   imgStart: true,
+  img: require("../../images/svg-2.svg"),
+
   alt: "transport",
   dark: false,
   primary: false,
@@ -41,6 +44,8 @@ export const homeObjThree = {
   description: "blip blip blop blop blip blip blop blop bbop bbbippp!!",
   buttonLabel: "Get Started",
   imgStart: false,
+  img: require("../../images/svg-2.svg"),
+
   alt: "Car",
   dark: true,
   primary: true,

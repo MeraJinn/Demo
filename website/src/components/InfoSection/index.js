@@ -22,6 +22,7 @@ const InfoSection = ({
   imgStart,
   topLine,
   lightText,
+  img,
   headline,
   darkTest,
   description,
@@ -54,7 +55,7 @@ const InfoSection = ({
             </Column1>
             <Column2>
               <ImgWrap>
-                <Img src={<AboutSvg />} alt="svg" />
+                <Img src={img} alt="svg" />
               </ImgWrap>
             </Column2>
           </InfoRow>
