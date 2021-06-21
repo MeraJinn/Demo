@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import {
   Nav,
   NavbarContainer,
@@ -9,9 +9,9 @@ import {
   NavMenu,
   NavBtn,
   NavBtnLink,
-} from "./NavbarElements";
-import { animateScroll as scroll } from "react-scroll";
-import { FaBars } from "react-icons/fa";
+} from './NavbarElements';
+import { animateScroll as scroll } from 'react-scroll';
+import { FaBars } from 'react-icons/fa';
 
 const Navbar = ({ toggle }) => {
   const [scrollNav, setScrollNav] = useState(false);
@@ -25,7 +25,7 @@ const Navbar = ({ toggle }) => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", changeNav);
+    window.addEventListener('scroll', changeNav);
   }, []);
 
   const toggleHome = () => {
@@ -79,19 +79,20 @@ const Navbar = ({ toggle }) => {
           </NavItem>
           <NavItem>
             <NavLinks
-              to="signup"
+              to="services"
               smooth={true}
               duration={1000}
               spy={true}
               exact="true"
               offset={80}
             >
-              Sign Up
+              Signup
             </NavLinks>
           </NavItem>
         </NavMenu>
+
         <NavBtn>
-          <NavBtnLink to="/signin">Sign In</NavBtnLink>
+          <NavBtnLink to="/App2">Sign In</NavBtnLink>
         </NavBtn>
       </NavbarContainer>
     </Nav>
