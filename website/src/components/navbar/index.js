@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import {
   Nav,
   NavbarContainer,
@@ -9,9 +9,9 @@ import {
   NavMenu,
   NavBtn,
   NavBtnLink,
-} from './NavbarElements';
-import { animateScroll as scroll } from 'react-scroll';
-import { FaBars } from 'react-icons/fa';
+} from "./NavbarElements";
+import { animateScroll as scroll } from "react-scroll";
+import { FaBars } from "react-icons/fa";
 
 const Navbar = ({ toggle }) => {
   const [scrollNav, setScrollNav] = useState(false);
@@ -25,7 +25,7 @@ const Navbar = ({ toggle }) => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', changeNav);
+    window.addEventListener("scroll", changeNav);
   }, []);
 
   const toggleHome = () => {
@@ -48,7 +48,7 @@ const Navbar = ({ toggle }) => {
               duration={1000}
               spy={true}
               exact="true"
-              offset={80}
+              offset={-80}
             >
               About
             </NavLinks>
@@ -60,7 +60,7 @@ const Navbar = ({ toggle }) => {
               duration={1000}
               spy={true}
               exact="true"
-              offset={80}
+              offset={-80}
             >
               Discover
             </NavLinks>
@@ -72,19 +72,19 @@ const Navbar = ({ toggle }) => {
               duration={1000}
               spy={true}
               exact="true"
-              offset={80}
+              offset={-80}
             >
               Services
             </NavLinks>
           </NavItem>
           <NavItem>
             <NavLinks
-              to="services"
+              to="dsssdd"
               smooth={true}
               duration={1000}
               spy={true}
               exact="true"
-              offset={80}
+              offset={-80}
             >
               Signup
             </NavLinks>
@@ -92,7 +92,7 @@ const Navbar = ({ toggle }) => {
         </NavMenu>
 
         <NavBtn>
-          <NavBtnLink to="/App2">Sign In</NavBtnLink>
+          <NavBtnLink to="/signin">Sign In</NavBtnLink>
         </NavBtn>
       </NavbarContainer>
     </Nav>

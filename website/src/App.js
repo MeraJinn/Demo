@@ -1,15 +1,16 @@
-import React from 'react';
-import './styles/main.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from './pages';
-import App2 from './pages/App2';
+import React from "react";
+import "./styles/main.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./pages";
+import SigninPage from "./pages/Auth/sign-in";
 
 const App = () => {
   return (
     <Router>
       <Switch>
         <Route path="/" component={Home} exact />
-        <Route path="/App2" component={App2} exact />
+        {/* <Route path="/App2" component={App2} exact /> */}
+        <Route path="/signin" component={SigninPage} exact />
       </Switch>
     </Router>
   );
