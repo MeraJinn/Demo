@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { auth } from "../../firebase";
+import { makeStyles } from "@material-ui/core/styles";
 import { TextField, Modal, Button } from "@material-ui/core";
 
 const getModalStyles = () => {
@@ -13,7 +14,23 @@ const getModalStyles = () => {
   };
 };
 
-const Login = ({ openSignIn, setOpenSignIn, setOpenSignUp }) => {
+const useStyles = makeStyles((theme) => ({
+  auth: {
+    outline: "none",
+    position: "absolute",
+    width: 400,
+    backgroundColor: "#232323",
+    borderRadius: 4,
+    padding: theme.spacing(2, 4, 3),
+  },
+  field: {
+    width: "100%",
+    marginBottom: 20,
+  },
+}));
+
+const Login = ({ openSignIn, setopenSignIn, setOpenSignUp }) => {
+  const classes = useStyles();
   const [modalStyle] = React.useState(getModalStyles);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -24,12 +41,12 @@ const Login = ({ openSignIn, setOpenSignIn, setOpenSignUp }) => {
       .signInWithEmailAndPassword(email, password)
       .catch((e) => alert(e.message));
 
-    setOpenSignIn(false);
+    setopenSignIn(false);
   };
 
   return (
-    <Modal open={openSignIn} onClose={() => setOpenSignIn(false)}>
-      <div style={modalStyle}>
+    <Modal open={openSignIn} onClose={() => setopenSignIn(false)}>
+      <div style={modalStyle} className={classes.auth}>
         <form noValidate>
           <TextField
             id="email"
@@ -54,7 +71,7 @@ const Login = ({ openSignIn, setOpenSignIn, setOpenSignUp }) => {
           <Button
             variant="contained"
             color="primary"
-            onClick={(() => setOpenSignUp(true), setOpenSignIn(false))}
+            onClick={() => setOpenSignUp(true)}
           >
             Sign Up
           </Button>
@@ -73,6 +90,7 @@ const Login = ({ openSignIn, setOpenSignIn, setOpenSignUp }) => {
 };
 
 const SignUp = ({ openSignUp, setOpenSignUp }) => {
+  const classes = useStyles();
   const [modalStyle] = React.useState(getModalStyles);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -95,7 +113,7 @@ const SignUp = ({ openSignUp, setOpenSignUp }) => {
 
   return (
     <Modal open={openSignUp} onClose={() => setOpenSignUp(false)}>
-      <div style={modalStyle}>
+      <div style={modalStyle} className={classes.auth}>
         <form noValidate>
           <TextField
             id="username"

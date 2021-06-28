@@ -13,7 +13,7 @@ import {
 import { animateScroll as scroll } from "react-scroll";
 import { FaBars } from "react-icons/fa";
 
-const Navbar = ({ toggle, setOpenSignIn, setOpenSignUp }) => {
+const Navbar = ({ toggle, setopenSignIn }) => {
   const [scrollNav, setScrollNav] = useState(false);
 
   const changeNav = () => {
@@ -92,7 +92,7 @@ const Navbar = ({ toggle, setOpenSignIn, setOpenSignUp }) => {
         </NavMenu>
 
         <NavBtn>
-          <NavBtnLink onClick={() => setOpenSignIn(true)}>Sign In</NavBtnLink>
+          <NavBtnLink onClick={() => setopenSignIn(true)}>Sign In</NavBtnLink>
         </NavBtn>
       </NavbarContainer>
     </Nav>

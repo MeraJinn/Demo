@@ -13,7 +13,7 @@ import { Login, SignUp } from "./Auth/authForms";
 
 const Home = () => {
   const [isOpen, setIsopen] = useState(false);
-  const [openSignIn, setopenSignIn] = useState(false);
+  const [openSignIn, setOpenSignIn] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false);
   const [User, setUser] = useState(null);
 
@@ -29,16 +29,21 @@ const Home = () => {
         openSignIn={openSignIn}
         openSignUp={openSignUp}
         setOpenSignUp={setOpenSignUp}
-        setopenSignIn={setopenSignIn}
+        setopenSignIn={setOpenSignIn}
       />
       <Navbar
         toggle={toggle}
         openSignIn={openSignIn}
         openSignUp={openSignUp}
         setOpenSignUp={setOpenSignUp}
-        setopenSignIn={setopenSignIn}
+        setopenSignIn={setOpenSignIn}
       />
-
+      <Login
+        openSignIn={openSignIn}
+        setOpenSignUp={setOpenSignUp}
+        setopenSignIn={setOpenSignIn}
+      />
+      <SignUp openSignUp={openSignUp} setOpenSignUp={setOpenSignUp} />
       <HeroElements />
       <InfoSection {...homeObjOne} />
       <InfoSection {...homeObjTwo} />
