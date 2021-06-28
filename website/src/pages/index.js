@@ -9,9 +9,13 @@ import {
   homeObjThree,
   homeObjTwo,
 } from "../components/InfoSection/data";
+import { Login, SignUp } from "./Auth/authForms";
 
 const Home = () => {
   const [isOpen, setIsopen] = useState(false);
+  const [openSignIn, setopenSignIn] = useState(false);
+  const [openSignUp, setOpenSignUp] = useState(false);
+  const [User, setUser] = useState(null);
 
   const toggle = () => {
     setIsopen(!isOpen);
@@ -19,8 +23,22 @@ const Home = () => {
 
   return (
     <>
-      <Sidebar isOpen={isOpen} toggle={toggle} />
-      <Navbar toggle={toggle} />
+      <Sidebar
+        isOpen={isOpen}
+        toggle={toggle}
+        openSignIn={openSignIn}
+        openSignUp={openSignUp}
+        setOpenSignUp={setOpenSignUp}
+        setopenSignIn={setopenSignIn}
+      />
+      <Navbar
+        toggle={toggle}
+        openSignIn={openSignIn}
+        openSignUp={openSignUp}
+        setOpenSignUp={setOpenSignUp}
+        setopenSignIn={setopenSignIn}
+      />
+
       <HeroElements />
       <InfoSection {...homeObjOne} />
       <InfoSection {...homeObjTwo} />
