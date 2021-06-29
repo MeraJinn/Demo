@@ -10,7 +10,7 @@ import {
   homeObjThree,
   homeObjTwo,
 } from "../components/InfoSection/data";
-import { Login, SignUp } from "./Auth/authForms";
+import { Login, SignUp } from "../Auth/authForms";
 
 const Home = () => {
   const [isOpen, setIsopen] = useState(false);
