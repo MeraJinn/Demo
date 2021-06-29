@@ -10,10 +10,11 @@ import {
   NavBtn,
   NavBtnLink,
 } from "./NavbarElements";
+import { auth } from "../../firebase";
 import { animateScroll as scroll } from "react-scroll";
 import { FaBars } from "react-icons/fa";
 
-const Navbar = ({ toggle, setopenSignIn }) => {
+const Navbar = ({ toggle, setopenSignIn, User }) => {
   const [scrollNav, setScrollNav] = useState(false);
 
   const changeNav = () => {
@@ -92,7 +93,13 @@ const Navbar = ({ toggle, setopenSignIn }) => {
         </NavMenu>
 
         <NavBtn>
-          <NavBtnLink onClick={() => setopenSignIn(true)}>Sign In</NavBtnLink>
+          {User?.displayName ? (
+            <NavBtnLink onClick={() => auth.signOut()}>
+              {User?.displayName}
+            </NavBtnLink>
+          ) : (
+            <NavBtnLink onClick={() => setopenSignIn(true)}>Sign In</NavBtnLink>
+          )}
         </NavBtn>
       </NavbarContainer>
     </Nav>

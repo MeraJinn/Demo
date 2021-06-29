@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     outline: "none",
     position: "absolute",
     width: 400,
-    backgroundColor: "#232323",
+    backgroundColor: "#fff",
     borderRadius: 4,
     padding: theme.spacing(2, 4, 3),
   },
@@ -103,7 +103,7 @@ const SignUp = ({ openSignUp, setOpenSignUp }) => {
       .createUserWithEmailAndPassword(email, password)
       .then((authUser) => {
         return authUser.user.updateProfile({
-          displayname: username,
+          displayName: username,
         });
       })
       .catch((e) => alert(e.message));

@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../components/navbar";
 import Sidebar from "../components/Sidebar";
 import HeroElements from "../components/HeroSection";
 import InfoSection from "../components/InfoSection";
 import Services from "../components/services";
+import { auth } from "../firebase";
 import {
   homeObjOne,
   homeObjThree,
@@ -21,6 +22,22 @@ const Home = () => {
     setIsopen(!isOpen);
   };
 
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        // User Logged In ...
+        console.log(authUser);
+        setUser(authUser);
+      } else {
+        //user Logged Out ...
+        setUser(null);
+      }
+    });
+    return () => {
+      unsubscribe();
+    };
+  }, [User]);
+
   return (
     <>
       <Sidebar
@@ -30,9 +47,11 @@ const Home = () => {
         openSignUp={openSignUp}
         setOpenSignUp={setOpenSignUp}
         setopenSignIn={setOpenSignIn}
+        User={User}
       />
       <Navbar
         toggle={toggle}
+        User={User}
         openSignIn={openSignIn}
         openSignUp={openSignUp}
         setOpenSignUp={setOpenSignUp}
